@@ -8,13 +8,14 @@ public class QuestionPicker : MonoBehaviour
     // Get JSON.
     // Get Progress.
     private string pregunta = "¿De Qué Color es el Mar?";
-    private List<string> respuestas = new List<string> { "azul", "rojo", "verde", "morado" };
+    private List<string> respuestas = new List<string> { "Azul es el color del Mar", "Rojo es el color del Mar", "Verde es el color del Mar", "Morado es el color del Mar" };
     private string fuente = "Art 30 Linea 1";
     private List<string> respondidas;
     public GameObject buttonPrefab;
     public GameObject panelToAttachButtonsTo;
     public Text title;
     private List<GameObject> Botones = new List<GameObject>();
+    public Font estiloTexto;
     void Start()
     {
         string correcta = respuestas[0];
@@ -30,7 +31,7 @@ public class QuestionPicker : MonoBehaviour
             Button Boton = button.GetComponent<Button>();
             if (i == 0)
             {
-                Boton.onClick.AddListener(Correct);
+                Boton.onClick.AddListener(() => { StartCoroutine(Correct(button)); });
                 Debug.Log("Respuesta Correcta: " + respuestas[0]);
             }
             else
@@ -38,13 +39,17 @@ public class QuestionPicker : MonoBehaviour
                 Boton.onClick.AddListener(Incorrect);
 
             }
-            button.transform.GetChild(0).GetComponent<Text>().text = respuestas[i].ToString();
+            Text texto =button.transform.GetChild(0).GetComponent<Text>();
+            texto.text = respuestas[i].ToString();
+            texto.font= estiloTexto;
+            // texto.color=new Color(0,0,0,1);
             Botones.Add(button);
         }
 
         StartCoroutine(AddButtons());
     }
-    void GetQuestion(){
+    void GetQuestion()
+    {
         // Get JSON
         // Get Progress
         // Find Question Not Answered
@@ -60,25 +65,36 @@ public class QuestionPicker : MonoBehaviour
             Botones[randomIndex] = temp;
         }
         int count = 1;
-            yield return new WaitForSeconds((float)0.7);
+        yield return new WaitForSeconds((float)0.7);
         foreach (GameObject Btn in Botones)
         {
-
             Btn.transform.position = new Vector3(Btn.transform.position.x, Btn.transform.position.y - count * 6 / 7, 1);
             Btn.transform.SetParent(panelToAttachButtonsTo.transform);
-            Btn.GetComponent<Animator>().SetTrigger("in");
+            Btn.GetComponent<Animator>().enabled=true;
             count++;
             yield return new WaitForSeconds((float)0.6);
 
         }
     }
-    void Correct()
+    IEnumerator Correct(GameObject btn)
     {
+        Animator correctAnimator = btn.GetComponent<Animator>();
+        correctAnimator.SetTrigger("correct");
         Debug.Log("Correct");
-        // Mark as Done.
-        // Increase Progress %.
-        // Maybe Add Coins.
-        // Go to Next Scene.
+        yield return new WaitForSeconds(1);
+
+        // foreach (GameObject boton in Botones)
+        // {
+        //     if(boton==btn){
+        //          correctAnimator.SetTrigger("hide");
+        //     }else{
+        //     Animator anim = boton.GetComponent<Animator>();
+        //     anim.SetTrigger("hide"); 
+        //     }
+        //     yield return new WaitForSeconds((float)0.6);
+
+        // }
+
 
     }
     void Incorrect()
@@ -86,7 +102,7 @@ public class QuestionPicker : MonoBehaviour
         Debug.Log("Incorrect");
         // Show Correct Answer.
         // Restart With New Question.
-        
+
         GetQuestion();
 
     }

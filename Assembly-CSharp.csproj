@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Player Data\PlayerData.cs" />
      <Compile Include="Assets\Scripts\Player Data\Saving.cs" />
      <Compile Include="Assets\Scripts\Transitions.cs" />
+     <None Include="Assets\Fonts\letters_for_learners\Letters for Learners Font ReadMe.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/thechileankink/Reformados/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

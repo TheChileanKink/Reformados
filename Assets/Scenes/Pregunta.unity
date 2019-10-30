@@ -899,6 +899,7 @@ MonoBehaviour:
     type: 3}
   panelToAttachButtonsTo: {fileID: 2062318253}
   title: {fileID: 653215306}
+  estiloTexto: {fileID: 12800000, guid: df5549c01887d474c8a870d8d1168b0b, type: 3}
 --- !u!4 &2092247850
 Transform:
   m_ObjectHideFlags: 0

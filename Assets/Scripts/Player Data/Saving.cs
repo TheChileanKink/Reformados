@@ -56,7 +56,7 @@ public static class Saving
             Debug.Log("File Deleted");
 
             File.Delete(filePath);
-            UnityEditor.AssetDatabase.Refresh();
+            // UnityEditor.AssetDatabase.Refresh();
 
         }
     }
