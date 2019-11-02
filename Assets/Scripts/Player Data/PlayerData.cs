@@ -8,16 +8,17 @@ public class PlayerData {
     public int total;
     public float per;
 
-    public int[] answered;
+    public List<string> answered;
 
-    public PlayerData(int correctos,int cien){
+    public PlayerData(int correctos,int cien,List<string> respondidas){
         completados=correctos;
         total=cien;
+        answered=respondidas;
         if(cien!=0){
             per=correctos*100/cien;
         }else{
             per=0;
-            Debug.Log("Error: Total=0");
+            Debug.Log("Error: Total no puede ser 0");
         }
     }
 }

@@ -301,6 +301,8 @@
 /define:UNITY_TEAM_LICENSE
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
+"Assets/FlagMovement.cs"
+"Assets/Preguntas/DataBase.cs"
 "Assets/Preguntas/QuestionPicker.cs"
 "Assets/Scripts/Player Data/PlayerData.cs"
 "Assets/Scripts/Player Data/Saving.cs"

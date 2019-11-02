@@ -1,18 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 public static class Saving
 {
 
-    public static PlayerData SaveData(int correctas, int total)
+    public static PlayerData SaveData(int correctas, int total, List<string> respondidas)
     {
         string path = Application.persistentDataPath + "/informacion.fun";
 
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(correctas, total);
+        PlayerData data = new PlayerData(correctas, total,respondidas);
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -36,9 +38,9 @@ public static class Saving
         }
         else
         {
-            int total = 100;
+            
             Debug.Log("First Save.");
-            PlayerData data = SaveData(0, total);
+            PlayerData data = SaveData(0, DataBase.questionCollection.preguntas.Length, new List<string>{});
             return data;
 
         }

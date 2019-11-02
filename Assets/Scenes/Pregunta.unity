@@ -243,7 +243,7 @@ RectTransform:
   m_GameObject: {fileID: 653215304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 366256496}
   m_RootOrder: 5
@@ -251,7 +251,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 628}
-  m_SizeDelta: {x: 900, y: 300}
+  m_SizeDelta: {x: 1400, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653215306
 MonoBehaviour:
@@ -272,13 +272,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 54f0b4ecfd38843e6b53de6c8b2d4225, type: 3}
-    m_FontSize: 100
+    m_Font: {fileID: 12800000, guid: df5549c01887d474c8a870d8d1168b0b, type: 3}
+    m_FontSize: 150
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 100
-    m_Alignment: 1
+    m_MaxSize: 300
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -895,11 +895,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3d4d90669b542388da359007e40d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  question:
+    id: 
+    creador: 
+    pregunta: 
+    respuestas: []
+    fuente: 
   buttonPrefab: {fileID: 1852641489579520969, guid: 9db0e47adc5c646ad8765cf11778f95c,
     type: 3}
   panelToAttachButtonsTo: {fileID: 2062318253}
   title: {fileID: 653215306}
   estiloTexto: {fileID: 12800000, guid: df5549c01887d474c8a870d8d1168b0b, type: 3}
+  sceneManager: {fileID: 1743645208}
 --- !u!4 &2092247850
 Transform:
   m_ObjectHideFlags: 0

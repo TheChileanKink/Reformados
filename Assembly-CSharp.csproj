@@ -53,7 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Preguntas\DataBase.cs" />
      <Compile Include="Assets\Preguntas\QuestionPicker.cs" />
+     <Compile Include="Assets\Scripts\FlagMovement.cs" />
      <Compile Include="Assets\Scripts\Player Data\PlayerData.cs" />
      <Compile Include="Assets\Scripts\Player Data\Saving.cs" />
      <Compile Include="Assets\Scripts\Transitions.cs" />
