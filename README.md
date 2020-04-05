@@ -1,5 +1,5 @@
 # Reformados
-Un juego interactivo para informar a la comunidad sobre la Constitución de 1980 dadas las situaciones sociales que se viven en Chile durante los años 2019-2020.
+Un juego interactivo para informar a la comunidad sobre la Constitución de 1980 dadas las situaciones sociales que se viven en Chile durante los años 2019-2020. Hecho en Unity.
 
 Informative game about 1980's Chilean Constitution given the social situation brought by citizens during 2019 and 2020.
 
